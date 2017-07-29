@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="170728_08_multiselect_style.css">
+  <script src="170728_08_multiselect_listSelect.js"></script>
+</head>
+
+<body>
+
+  Клик на элементе выделяет только его.
+  <br> Ctrl(Cmd)+Клик добавляет/убирает элемент из выделенных.
+  <br> Shift+Клик добавляет промежуток от последнего кликнутого к выделению.
+  <br>
+
+  <ul>
+    <li class="selected">Кристофер Робин</li>
+    <li>Винни-Пух</li>
+    <li>Ослик Иа</li>
+    <li>Мудрая Сова</li>
+    <li>Кролик. Просто кролик.</li>
+  </ul>
+
+  <button onclick="alert(listSelect.getSelected())">listSelect.getSelected()</button>
+
+  <script>
+    var listSelect = new ListSelect({
+      elem: document.querySelector('ul')
+    });
+  </script>
+
+</body>
+
+</html>
