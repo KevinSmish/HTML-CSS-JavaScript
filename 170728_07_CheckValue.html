@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+
+	<style> .error { border-color: red; } </style>
+	Введите ваш возраст: <input type="text" id="age" placeholder="Возраст"> <br>
+	<div> Имя: <input type="text" placeholder="Имя"> </div> <br>
+    <div id="error"></div> <br>
+
+	<style>
+		.my::-webkit-input-placeholder {
+		  color: red;
+		  font-style: italic;
+		}
+		.my::-moz-input-placeholder {
+			color: red;
+			font-style: italic;
+		}
+		.my::-ms-input-placeholder {
+			color: red;
+			font-style: italic;
+		}
+	</style>
+
+	<input class="my" type="text" placeholder="E-mail">
+	Стилизованный плейсхолдер
+
+	<script>
+		age.onblur = function() {
+			if (isNaN(this.value)) { // введено не число
+			    // показать ошибку
+				this.classList.add("error");
+				//this.className = "error";
+				//error.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.'
+				age.focus();
+			} else {
+	      		this.classList.remove("error");
+			}
+		};
+		age.onfocus = function() {
+			if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
+				this.className = "";
+				error.innerHTML = "";
+			}
+		};
+	</script>
+	</body>
+</html>
