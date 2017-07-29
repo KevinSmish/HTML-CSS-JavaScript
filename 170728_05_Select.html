@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+		<!-- <input type="submit" onclick="alert('!')"> -->
+		<select id="select">
+			<option value="one">Один</option>
+			<option value="two" selected>Два</option>
+			<option value="three">Три</option>
+		</select>
+		<script>
+			var select = document.getElementById('select');
+			var options = select.options;
+
+			alert(select.value); //выведет 'two'
+			//select.value = 'one';
+			select.selectedIndex = 0;
+
+			for (var i = 0; i < options.length; i++) {
+				if (options[i].selected === true) {
+					options[i].text = '!' + options[i].text;
+				} else {
+					options[i].text = '?' + options[i].text;
+				}
+			}
+
+		</script>
+
+	</body>
+</html>
