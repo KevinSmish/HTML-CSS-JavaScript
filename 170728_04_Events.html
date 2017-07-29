@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+		<!-- <input type="submit" onclick="alert('!')"> -->
+		<button id="elem">Элемент</button>
+		<div id="elem1" style="border: 1px solid black; width: 200px; height: 200px; padding: 10px;">817:376</div>
+		<br>
+		<input id="input">
+		<div id="result"></div>
+
+		<br>
+		<ul id="ul">
+			<li>пункт 1</li>
+			<li>пункт 2</li>
+			<li>пункт 3</li>
+			<li>пункт 4</li>
+			<li>пункт 5</li>
+		</ul>
+		<button id="button_ul">Добавить li</button>
+
+
+		<script>
+			document.getElementById('elem').onclick = funcClick;
+			document.getElementById('elem1').onmousemove = func;
+
+			var input = document.getElementById('input');
+			var result = document.getElementById('result');
+			input.onkeypress = funcKeyPress;
+
+			function funcClick(event) {
+				alert(event.type); //выведет 'click'
+			}
+
+			function func(event) {
+				this.innerHTML = event.clientX + ':' + event.clientY;
+			}
+
+			function funcKeyPress(event) {
+				var code = event.keyCode;
+				var key = String.fromCharCode(event.keyCode);
+
+				result.innerHTML = 'Код: ' + code + ', клавиша' + key;
+
+				if (event.ctrlKey) {
+					result.innerHTML += ' нажат Ctrl';
+				}
+				if (event.altKey) {
+					result.innerHTML += ' нажат Alt';
+				}
+				if (event.shiftKey) {
+					result.innerHTML += ' нажат Shift';
+				}
+			}
+			// *************************************
+			var li = document.querySelectorAll('#ul li');
+
+			for (var i = 0; i < li.length; i++) {
+				li[i].addEventListener('click', addSign);
+			}
+			function addSign() {
+				this.innerHTML = this.innerHTML + '!';
+			}
+
+			//Реализация кнопочки добавления новой li:
+			var ul = document.getElementById('ul');
+			var button = document.getElementById('button_ul');
+			button.addEventListener('click', addLi);
+			function addLi() {
+				var li = document.createElement('li');
+				li.innerHTML = 'новая li';
+				li.addEventListener('click', addSign); //навесим событие на новую li
+				ul.appendChild(li);
+			}
+
+		</script>
+
+	</body>
+</html>
