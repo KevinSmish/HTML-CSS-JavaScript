@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+		Это основное содержимое страницы. <br>
+		<img id="img" src="https://js.cx/clipart/yozhik.jpg?speed=1">
+		<iframe src="https://example.com/" style="height:60px"></iframe>
+
+		<script>
+			function ready() {
+			    alert( 'DOM готов' );
+			    alert( "Размеры картинки: " + img.offsetWidth + "x" + img.offsetHeight );
+			};
+
+			window.onload = function() {
+			    alert( 'Документ и все ресурсы загружены' );
+			};
+			window.onbeforeunload = function() {
+				return "Данные не сохранены. Точно перейти?";
+			};
+
+			document.addEventListener("DOMContentLoaded", ready);
+		</script>
+
+	</body>
+</html>
