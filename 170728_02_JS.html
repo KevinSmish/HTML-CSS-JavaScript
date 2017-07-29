@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+		<!-- <input type="submit" onclick="alert('!')"> -->
+		<input type="text" value="!" id="test">
+		<input type="submit" onclick="func()">
+		<script>
+			function func() {
+				var elem = document.getElementById('test');
+				alert(elem.value); //выведет '!'
+				alert(elem.id); //выведет 'test'
+				alert(elem.type); //выведет 'text'
+				elem.value = 'www'; //присвоим новое значение атрибуту value
+			}
+		</script>
+
+	</body>
+</html>
