@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+			var name = 'Дима';
+			name = prompt('Ваше имя?');
+			alert('Привет, '+name);
+
+			var ok = confirm('Вам уже есть 18 лет?');
+			alert(ok);
+
+			// var arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+			var obj = {1: 'пн', 2: 'вт', 3: 'ср', 4: 'чт', 5: 'пт', 6: 'сб', 7: 'вс'};
+			alert(obj[1]); //выведет 'пн'
+
+
+			switch (obj[1]) {
+				case 'пн':
+					alert('Понедельник!!!'); // 		здесь код, который выполнится в случае, если переменная имеет значение1;
+					break;
+				case 'вт':
+					alert('Вторник')		
+					break;
+				default:
+					alert('Не понедельник или вторник') //		этот код выполнится в случае, если переменная не совпала ни с одним значением;
+					break;
+			}
+
+
+			var obj = {Коля: 200, Вася: 300, Петя: 400};
+			for (key in obj) {
+				alert(key); //выведет 'Коля', 'Вася', 'Петя'
+			}
+
+			//var str = 'Мне очень нравится JavaScript';
+			//document.write(str.substr(0, 3)); 
+			//Результат выполнения кода: Мне 
+			
+			//var str = 'Мне очень нравится JavaScript';
+			//document.write(str.substr(4));
+			// Результат выполнения кода: очень нравится JavaScript 
+
+			//var str = 'Мне очень нравится JavaScript';
+			//document.write(str.substr(-10, 4));
+			// Результат выполнения кода: Java 
+
+
+			//var str = 'Я учу учу Javascript';
+			//document.write(str.indexOf('учу'));
+			//Результат выполнения кода: 2 
+
+			//var str = 'Я учу учу Javascript';
+			//document.write(str.indexOf('учу', 5));
+			//Результат выполнения кода: 6 
+
+			//var str = 'Я учу Javascript';
+			//document.write(str.indexOf('JaVaScrIpt'));
+			//Результат выполнения кода: -1 - не нашел
+
+			//var str = 'Б..Б..Б';
+			//document.write(str.lastIndexOf('Б'));
+			//Результат выполнения кода: 6 
+
+			//var str = 'Я учу PHP';
+			//var newStr = str.replace('PHP', 'JavaScript');
+			//document.write(newStr);
+			//Результат выполнения кода: Я учу JavaScript 
+
+			//var str = 'Мне очень нравится JavaScript';
+			//document.write(str.substr(0, 9));
+			//Результат выполнения кода: Мне очень 
+
+			for (var i = 1; i <= 9; i++) {
+				for (var j = 1; j <= 3; j++) {
+					document.write(i);
+			}
+			document.write('<br>'); //выводим <br>, чтобы было в столбик
+
+			var arr = [];
+//			for (var i = 0; i < 10; i++) {
+//				arr.push('x');
+//			}
+//			console.log(arr); //выведет ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+
+
+}
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>
